@@ -9,7 +9,7 @@ Easy to use, free, and open-source nuker for you to use!
 * Make a Discord bot with all privileged intents enabled, then download the latest release.
 * Put your bot's token in when asked by the program
 * Put in the other stuff (prefix, target server, etc.)
-You're good to go!
+> You're good to go!
 
 **Commands:**
 Use the help command in the bot
