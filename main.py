@@ -1,6 +1,10 @@
+
+# Developed by J0HAN
+
 import discord, asyncio
 from colorama import Fore
 
+# Set-up
 print(Fore.WHITE)
 try:
     with open("config.txt") as file:
@@ -10,12 +14,13 @@ except:
     print(Fore.RED + "Error: Check your 'config.txt' file for any mistakes")
 
 if prefix == "":
-    print(Fore.YELLOW + "Warning: Variable 'prefix' is set as whitespace")
+    print(Fore.YELLOW + "Warning: Your prefix is set as whitespace")
 
 client = discord.Client(intents=discord.Intents.all())
 
 print(Fore.BLACK)
 
+# Main
 @client.event
 async def on_ready():
     print(Fore.WHITE + f"User: {client.user}")
@@ -27,7 +32,16 @@ async def on_message(message):
     if msg.startswith(f"{prefix}help"):
         print(Fore.GREEN + f"\n'{prefix}help' command used!")
         try:
-            await message.reply("W.I.P.")
+            await message.reply(f"""💥 **Johan's Nuker**
+                                Revamped help menu soon that'll be an embed!
+                                **Commands:**
+                                * {prefix}nuke - Automatic nuke
+                                * {prefix}del - Deletes all channels & roles
+                                * {prefix}cdel - Deletes all channels
+                                * {prefix}rdel - Deletes all roles
+                                * {prefix}channels [amount] [name] - Creates a specified amount of channels with the given name
+                                * {prefix}roles [amount] [name] - Creates a certain amount of roles with whatever name you want
+                                """)
         except:
             print(Fore.YELLOW + f"Warning: '{prefix}help' command unsuccessfully ran")
         
@@ -77,6 +91,7 @@ async def on_message(message):
                 await asyncio.sleep(0.3)
         print(Fore.WHITE + "Mass role creation has been finished!")
 
+    # Commands (feel free to rename)
     if msg.startswith(f"{prefix}nuke"):
         await message.guild.edit(name="NUKED BY J0HAN")
         await del_channels()
