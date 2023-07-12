@@ -19,6 +19,12 @@ Easy to use, free, and open-source nuker for you to use!
 **Commands:**
 Use the help command in the bot...
 
+**Debugging:**
+Having trouble? No worries!
+* Make sure all the files are in one folder and that no other files are in it.
+* Check to see if you are on the latest version.
+* You can DM me on Discord at 'J0HAN#6805' for any help.
+
 **To-do:**
 1. Compile into a '.exe' file for ultimate ease of use!
 2. Make mass channel ping actually effective.
