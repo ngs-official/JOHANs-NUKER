@@ -20,5 +20,5 @@ Easy to use, free, and open-source nuker for you to use!
 Use the help command in the bot...
 
 **To-do:**
-1. Compile into '.exe' file for ultimate ease of use!
+1. Compile into a '.exe' file for ultimate ease of use!
 2. Make mass channel ping actually effective.
