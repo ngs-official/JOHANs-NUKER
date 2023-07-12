@@ -23,6 +23,7 @@ Use the help command in the bot...
 Having trouble? No worries!
 * Make sure all the files are in one folder and that no other files are in it.
 * Check to see if you are on the latest version.
+* See if the 'config.txt' file is properly set-up!
 * You can DM me on Discord at 'J0HAN#6805' for any help.
 
 **To-do:** Just for me!
