@@ -6,8 +6,9 @@ Easy to use, free, and open-source nuker for you to use!
 * Discord.py (https://pypi.org/project/discord.py/)
 * Colorama (https://pypi.org/project/colorama/)
 
-**Discord.py:** ```pip install -U discord.py```
-**Colorama:** ```pip install colorama```
+**Download Discord.py:** ```pip install -U discord.py```
+**Download Colorama:** ```pip install colorama```
+(Run in command prompt, only Windows supported as of now)
 
 **Set-up:**
 * Make a Discord bot with all privileged intents enabled.
