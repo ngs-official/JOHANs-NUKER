@@ -25,7 +25,7 @@ Having trouble? No worries!
 * Check to see if you are on the latest version.
 * You can DM me on Discord at 'J0HAN#6805' for any help.
 
-**To-do:**
+**To-do:** Just for me!
 1. Compile into a '.exe' file for ultimate ease of use!
 2. Make mass channel ping actually effective.
 3. Add proxies to bypass Discord's rate limiting, but I'm not that good of a coder so...
