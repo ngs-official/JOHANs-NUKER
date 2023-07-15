@@ -328,3 +328,4 @@ try:
     client.run(token)
 except:
     print(Fore.RED + "INVALID TOKEN GIVEN")
+    print(Fore.WHITE)
