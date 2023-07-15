@@ -1,5 +1,4 @@
 @echo off
-title JOHAN NUKER v1.2
-echo Starting up...
+title JOHAN NUKER v1.3
 python main.py
 pause
