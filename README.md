@@ -6,7 +6,7 @@ Easy to use, free, and open-source nuker for you to use!
 * Discord.py (https://pypi.org/project/discord.py/)
 * Colorama (https://pypi.org/project/colorama/)
 
-**Download Discord.py:** ```pip install -U discord.py```
+**Download Discord.py:** ```pip install -U discord.py``` <br />
 **Download Colorama:** ```pip install colorama```
 (Run in command prompt, only Windows supported as of now)
 
