@@ -1,14 +1,14 @@
 # JOHAN NUKER
 Easy to use, free, and open-source nuker for you to use!
 
-**Requirements:**
+### Requirements:
 * Python (https://www.python.org/downloads/)
 * Discord.py (https://pypi.org/project/discord.py/)
 * Colorama (https://pypi.org/project/colorama/)
 
 **Download Discord.py:** ```pip install -U discord.py``` <br />
-**Download Colorama:** ```pip install colorama```
-(Run in command prompt, only Windows supported as of now)
+**Download Colorama:** ```pip install colorama``` <br />
+(Run those in command prompt, only Windows supported as of now)
 
 **Set-up:**
 * Make a Discord bot with all privileged intents enabled.
