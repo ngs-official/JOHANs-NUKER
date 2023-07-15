@@ -1,5 +1,5 @@
 
-# JOHAN NUKER | v1.3 WIP | Developed by J0HAN
+# JOHAN NUKER | v1.3 | Developed by J0HAN
 
 import discord, asyncio, sys, random, time
 from colorama import Fore
