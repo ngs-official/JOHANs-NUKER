@@ -12,13 +12,13 @@ Easy to use, free, and open-source nuker for you to use!
 (Run those in command prompt, only Windows supported as of now)
 
 ### Set-up
-* Make a Discord bot with all privileged intents enabled. You can search up 'make discord bot how'.
+* Make a Discord bot with all privileged intents enabled. You can search up how if you don't how to.
 * Download all the files in this repository (except for 'README.md').
 * Set up the 'config.txt' file by putting your bot's token in the first line, your user ID in the second line, and then your preferred prefix in the third line.
 * You're good to go!
 
 ### Tips
-1. With the mass channel ping command, if you want to have multiple words in your channel name combine them with the a dash (like instead of 'lmao get nuked' do 'lmao-get-nuked'.
+1. With the mass channel ping command, if you want to have multiple words in your channel name combine them with the a dash (like instead of 'lmao get nuked' do 'lmao-get-nuked').
 2. Disable community to be able to delete all the channels!
 
 ### Debugging
