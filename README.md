@@ -35,4 +35,4 @@ Having trouble? No worries!
 * Make sure all the files are in one folder and that no other files are in it.
 * Check to see if you are on the latest version.
 * See if the 'config.txt' file is properly set-up: your bot's token, then your user ID, and then your preferred prefix each in their own line without anything else in that exact order.
-* You can DM me on Discord at 'J0HAN#6805' for any help, don't feel shy!
+* You can DM me on Discord at 'ngs_official' for any help! Don't feel shy.
