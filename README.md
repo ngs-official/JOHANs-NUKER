@@ -6,6 +6,7 @@ The easy-to-use, open source, and good looking nuker for anyone to use!
 Python 3.11 (https://www.python.org/downloads/)
 
 ## Instructions
+Important instructions for setting-up the nuker.
 * Create a bot at https://discord.com/developers/applications by clicking on 'New Application' in the top right.
 * After creating it click on the 'Bot' category on the bar on the left.
 * Scroll down and toggle all three switches under the 'Privileged Gateway Intents' heading to enable them.
@@ -23,7 +24,14 @@ Python 3.11 (https://www.python.org/downloads/)
 *The place where you edit your status, switch account, etc.
 
 ## Updates
-
+The newest additions in version 1.5!
+* ⭐ New Title | Added a new title that appears when the bot comes online
+* 👍 More Commands | Added the 'spam' and 'dmall' commands
+* ⏰ Faster | The 'nuke', 'del', and 'mcp' commands now run much faster
+* ✅ Easy Installation | Added 'setup.bat' that automatically downloads discord.py & colorama
+* 🐛 Bug Fixes | Fixed some bugs and logging issues
+* 🚀 Performance Boosts | Got rid of unnecessary code and abbreviated many variables and whatnot
+* ⚒️ Minor Changes | Some other minor changes that I forgot about
 
 ### Tips
 1. With the mass channel ping command, if you want to have multiple words in your channel name combine them with the a dash (like instead of 'lmao get nuked' do 'lmao-get-nuked').
@@ -31,7 +39,7 @@ Python 3.11 (https://www.python.org/downloads/)
 
 ### Debugging
 Having trouble? No worries!
-* Make sure all the files are in one folder and that no other files are in it.
-* Check to see if all the file names are what they originally were.
-* See if the 'config.txt' file is properly set-up: your bot's token, then your user ID, and then your preferred prefix each in their own line without anything else in that exact order.
-* You can DM me on Discord at 'J0HAN#4273' for any help! Don't feel shy.
+1. Make sure all the files are in one folder and that no other files are in it.
+2. Check to see if all the file names are what they originally were.
+3. See if the 'config.txt' file is properly set-up: your bot's token, then your user ID, and then your preferred prefix each in their own line without anything else in that exact order.
+4. You can DM me on Discord at 'J0HAN#4273' for any help! Don't feel shy.
