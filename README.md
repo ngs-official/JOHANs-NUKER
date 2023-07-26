@@ -33,6 +33,7 @@ The newest additions in version 1.5!
 * 🚀 Performance Boosts | Got rid of unnecessary code and abbreviated many variables and whatnot
 * ⚒️ Minor Changes | Some other minor changes that I forgot about
 
+## ⠀
 ### Tips
 1. With the mass channel ping command, if you want to have multiple words in your channel name combine them with the a dash (like instead of 'lmao get nuked' do 'lmao-get-nuked').
 2. Disable community to be able to delete all the channels!
