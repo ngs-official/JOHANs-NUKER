@@ -24,19 +24,24 @@ Important instructions for setting-up the nuker.
 *The place where you edit your status, switch account, etc.
 
 ## Updates
-The newest additions in version 1.5!
-* ⭐ New Title | Added a new title that appears when the bot comes online
-* 👍 More Commands | Added the 'spam' and 'dmall' commands
-* ⏰ Faster | The 'nuke', 'del', and 'mcp' commands now run much faster
-* ✅ Easy Installation | Added 'setup.bat' that automatically downloads discord.py & colorama
-* 🐛 Bug Fixes | Fixed some bugs and logging issues
-* 🚀 Performance Boosts | Got rid of unnecessary code and abbreviated many variables and whatnot
-* ⚒️ Minor Changes | Some other minor changes that I forgot about
+The newest additions in version 1.6!
+* 👍 DM Spamming | Added the 'dmspam' command that can repeatedly spam one person
+* 📖 More Readable | The code is now a little more easier to understand
+* 🎯 Target Mode | Allows you to nuke a server from a different server
+* 🐛 Bug Fixes | Fixed a few bugs/logging issues
+* ⚒️ Minor Changes | Some other minor changes like left-aligning the title
 
 ## ⠀
 ### Tips
 1. With the mass channel ping command, if you want to have multiple words in your channel name combine them with the a dash (like instead of 'lmao get nuked' do 'lmao-get-nuked').
 2. Disable community to be able to delete all the channels!
+
+### Speed
+* 100 channels created in ~20 seconds
+* 100 roles created in ~20 seconds
+* 100 channels deleted in ~25 seconds
+* 100 roles deleted in ~100 seconds (Discord really doesn't like mass role deletion)
+DO note that these times can vary on many factors.
 
 ### Debugging
 1. Make sure all the files are in one folder and that no other files are in it.
