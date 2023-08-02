@@ -1,4 +1,4 @@
 @echo off
-title JOHAN NUKER v1.5
+title JOHAN NUKER v1.6
 python main.py
 pause
