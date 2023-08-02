@@ -1,6 +1,6 @@
 # JOHAN's NUKER
 The easy-to-use, open source, and good-looking nuker for anyone to use!
-![image](https://github.com/ngs-official/johan-nuker/assets/123272327/e00c3c19-7efb-494d-a436-d819be791ead)
+![image](https://github.com/ngs-official/johan-nuker/assets/123272327/da5c4afb-2794-4928-8192-fa3679e63e4a)
 
 ### Requirements <br />
 Python 3.11 (https://www.python.org/downloads/)
@@ -26,7 +26,7 @@ Important instructions for setting-up the nuker.
 ## Updates
 The newest additions in version 1.6!
 * 📄 Rebranding │ Changed from 'JOHAN NUKER' to 'JOHAN's NUKER'
-* 👍 DM Spamming │ Added the 'dmspam' command that can repeatedly spam one person
+* 👍 More Commands │ Added 'categories', 'voice', 'cadel', 'tdel', 'vdel', and 'dmspam'
 * 📖 More Readable │ The code is now a little more easier to understand
 * 🎯 Target Mode │ Allows you to nuke a server from a different server
 * 🐛 Bug Fixes │ Fixed a few bugs/logging issues
@@ -39,10 +39,7 @@ The newest additions in version 1.6!
 3. Feel free to go into the code and edit what the automatic nuke does!
 
 ### Speed
-* 100 channels created in ~20 seconds
-* 100 roles created in ~20 seconds
-* 100 channels deleted in ~25 seconds
-* 100 roles deleted in ~20 seconds
+* 100 channels/roles created/deleted in ~20 seconds!
 Do note that these times can vary on many factors.
 
 ### Debugging
