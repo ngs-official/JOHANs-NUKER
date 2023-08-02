@@ -1,6 +1,6 @@
 # JOHAN's NUKER
 The easy-to-use, open source, and good-looking nuker for anyone to use!
-![image](https://github.com/ngs-official/johan-nuker/assets/123272327/91b38974-a04d-45f0-8eee-10d1950300a7)
+![image](https://github.com/ngs-official/johan-nuker/assets/123272327/e00c3c19-7efb-494d-a436-d819be791ead)
 
 ### Requirements <br />
 Python 3.11 (https://www.python.org/downloads/)
