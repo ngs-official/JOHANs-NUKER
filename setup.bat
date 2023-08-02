@@ -5,6 +5,6 @@ echo.
 pip install -U discord.py
 pip install colorama
 echo.
-echo Finished! Run the 'start.bat' file to start up the bot!
+echo Completed! Run the 'start.bat' file to start up the bot!
 echo.
 pause
