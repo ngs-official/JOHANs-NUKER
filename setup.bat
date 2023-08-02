@@ -1,5 +1,5 @@
 @echo off
-title Johan Nuker Set-Up
+title JOHAN's NUKER
 echo Downloading all the nessecary Python libraries...
 echo.
 pip install -U discord.py
