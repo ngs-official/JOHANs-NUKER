@@ -36,6 +36,7 @@ The newest additions in version 1.6!
 ### Tips
 1. With the mass channel ping command, if you want to have multiple words in your channel name combine them with the a dash (like instead of 'lmao get nuked' do 'lmao-get-nuked').
 2. Disable community to be able to delete all the channels!
+3. Feel free to go into the code and edit what the automatic nuke does!
 
 ### Speed
 * 100 channels created in ~20 seconds
