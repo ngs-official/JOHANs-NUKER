@@ -1,5 +1,5 @@
 # JOHAN's NUKER
-The easy-to-use, open source, and good-looking nuker for anyone to use!
+Fast, vast, and open-source. Quickly vaporise a server, enjoy vast amounts of commands, and relax knowing it's all open-source.
 ![image](https://github.com/ngs-official/johan-nuker/assets/123272327/da5c4afb-2794-4928-8192-fa3679e63e4a)
 
 ### Requirements <br />
