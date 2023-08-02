@@ -1,8 +1,4 @@
-# JOHAN's NUKER | v1.6 | Developed by J0HAN
-
-# Feel free to copy any and all code for your own personal usage.
-# If you do however, please give me at least some credit.
-# I will not enforce the above, but at least try to be a good human being.
+# JOHAN's NUKER | v1.6.1 | Developed by J0HAN
 
 # IMPORTING
 import discord, asyncio, random, time
@@ -59,13 +55,13 @@ print(hde)
 # START-UP
 @bot.event
 async def on_ready():
-    global trgt_on, ctx
+    global trgt_on, ctx, usr
 
     try:
         usr=await bot.fetch_user(usrID)
     except:
-        print(f"\n{wrn}Invalid user ID given.")
-        usr="Invalid"
+        print(f"\n{err}INVALID USER ID")
+        exit()
         
     if trgt_on==True:
         try:
@@ -389,10 +385,11 @@ async def on_message(message):
         strt=time.time()
         for m in ctx.members:
             try:
-                await m.ban(reason="SERVER NUKED")
-                m_banned+=1
-                if dbg_on==True:
-                    print(f"{scs}✚ Member has been banned! ({m_banned}/{total_m})")
+                if m.user!=usr:
+                    await m.ban(reason="SERVER NUKED")
+                    m_banned+=1
+                    if dbg_on==True:
+                        print(f"{scs}✚ Member has been banned! ({m_banned}/{total_m})")
             except:
                 print(f"{wrn}━ Unable to ban member. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
@@ -410,9 +407,10 @@ async def on_message(message):
         strt=time.time()
         for m in ctx.members:
             try:
-                await m.kick(reason="SERVER NUKED")
-                m_kicked+=1
-                print(f"{scs}✚ Member has been kicked! ({m_kicked}/{total_m})")
+                if m.user!=usr:
+                    await m.kick(reason="SERVER NUKED")
+                    m_kicked+=1
+                    print(f"{scs}✚ Member has been kicked! ({m_kicked}/{total_m})")
             except:
                 print(f"{wrn}━ Unable to kick member. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
@@ -526,7 +524,7 @@ async def on_message(message):
 * {prfx}ban — Bans everyone
 * {prfx}kick — Kicks everyone
 * {prfx}dmall [message] — DMs every server member a message once
-* {prfx}dmspam [userID] [amount] [message] — Spams someone in their DMs
+* {prfx}dmspam [user] [amount] [message] — Spams someone in their DMs
 * {prfx}hide — Changes status from online to offline every second (may slow down other functions)*
 ¹If you'd like to ban everyone at the end then send the command as '{prfx}ban y'.
 ²No need to add everyone ping, it is automatically added at the beginning of the message with a space after.
@@ -552,7 +550,7 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
             if len(cmdN) > 1:
                 if cmdN[1]=="y":
                     await be()
-            asyncio.wait_for(loop2)
+            asyncio.wait_for(loop2, timeout=None)
             dbg_on=True
             print(f"{otr}\n► NUKE OVER")
 
@@ -564,7 +562,7 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
                     amt=int(cmd[1])
                     await mcp(amt, cmd[2], cmd[3])
                 except:
-                    await message.reply("Error, did you put a valid number?")
+                    await message.reply("Error, did you put everything in correctly?")
             else:
                 await message.reply("Please enter all required arguments.")
 
@@ -575,7 +573,7 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
                     amtC1=int(cmdC1[1])
                     await mc1(amtC1, cmdC1[2])
                 except:
-                    await message.reply("Error, did you put a valid number?")
+                    await message.reply("Error, did you put everything in correctly?")
             else:
                 await message.reply("Please enter all required arguments.")
 
@@ -586,7 +584,7 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
                     amtC2=int(cmdC2[1])
                     await mc2(amtC2, cmdC2[2])
                 except:
-                    await message.reply("Error, did you put a valid number?")
+                    await message.reply("Error, did you put everything in correctly?")
             else:
                 await message.reply("Please enter all required arguments.")
 
@@ -597,7 +595,7 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
                     amtV=int(cmdV[1])
                     await mv(amtV, cmdV[2])
                 except:
-                    await message.reply("Error, did you put a valid number?")
+                    await message.reply("Error, did you put everything in correctly?")
             else:
                 await message.reply("Please enter all required arguments.")
 
@@ -608,7 +606,7 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
                     amtR=int(cmdR[1])
                     await mr(amtR, cmdR[2])
                 except:
-                    await message.reply("Error, did you put a valid number?")
+                    await message.reply("Error, did you put everything in correctly?")
             else:
                 await message.reply("Please enter all required arguments.")
 
@@ -655,7 +653,7 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
                     amtS=int(cmdS[1])
                     await spam(message.channel, amtS, "@everyone " + cmdS[2])
                 except:
-                    await message.reply("Error, did you put a valid number?")
+                    await message.reply("Error, did you put everything in correctly?")
             else:
                 await message.reply("Please enter all required arguments.")
             
@@ -671,11 +669,16 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
             cmdD2=msg.split(" ", 3)
             if len(cmdD2) > 3:
                 try:
-                    trgt=await bot.fetch_user(cmdD2[1])
+                    if cmdD2[1].startswith("<"):
+                        trgt1=cmdD2[1].replace("<@", "")
+                        trgt2=trgt1.replace(">", "")
+                        trgt=await bot.fetch_user(trgt2)
+                    else:
+                        trgt=await bot.fetch_user(cmdD2[1])
                     amtD=int(cmdD2[2])
                     await dmspam(trgt, amtD, cmdD2[3])
                 except:
-                    await message.reply("Error, did you put a valid number?")
+                    await message.reply("Error, did you put everything in correctly?")
             else:
                 await message.reply("Please enter all required arguments.")
 
