@@ -1,5 +1,5 @@
-# JOHAN NUKER
-The easy-to-use, open source, and good looking nuker for anyone to use!
+# JOHAN's NUKER
+The easy-to-use, open source, and good-looking nuker for anyone to use!
 ![image](https://github.com/ngs-official/johan-nuker/assets/123272327/91b38974-a04d-45f0-8eee-10d1950300a7)
 
 ### Requirements <br />
@@ -25,11 +25,12 @@ Important instructions for setting-up the nuker.
 
 ## Updates
 The newest additions in version 1.6!
-* 👍 DM Spamming | Added the 'dmspam' command that can repeatedly spam one person
-* 📖 More Readable | The code is now a little more easier to understand
-* 🎯 Target Mode | Allows you to nuke a server from a different server
-* 🐛 Bug Fixes | Fixed a few bugs/logging issues
-* ⚒️ Minor Changes | Some other minor changes like left-aligning the title
+* 📄 Rebranding │ Changed from 'JOHAN NUKER' to 'JOHAN's NUKER'
+* 👍 DM Spamming │ Added the 'dmspam' command that can repeatedly spam one person
+* 📖 More Readable │ The code is now a little more easier to understand
+* 🎯 Target Mode │ Allows you to nuke a server from a different server
+* 🐛 Bug Fixes │ Fixed a few bugs/logging issues
+* ⚒️ Minor Changes │ Some other minor changes like left-aligning the title
 
 ## ⠀
 ### Tips
@@ -40,8 +41,8 @@ The newest additions in version 1.6!
 * 100 channels created in ~20 seconds
 * 100 roles created in ~20 seconds
 * 100 channels deleted in ~25 seconds
-* 100 roles deleted in ~100 seconds (Discord really doesn't like mass role deletion)
-DO note that these times can vary on many factors.
+* 100 roles deleted in ~20 seconds
+Do note that these times can vary on many factors.
 
 ### Debugging
 1. Make sure all the files are in one folder and that no other files are in it.
