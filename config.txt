@@ -1,3 +1,3 @@
-your-bot-token
+your-bots-token
 your-user-id
 prefix
