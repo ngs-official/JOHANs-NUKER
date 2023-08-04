@@ -37,6 +37,7 @@ The newest additions in version 1.6!
 1. With the mass channel ping command, if you want to have multiple words in your channel name combine them with the a dash (like instead of 'lmao get nuked' do 'lmao-get-nuked').
 2. Disable community to be able to delete all the channels!
 3. Feel free to go into the code and edit what the automatic nuke does!
+4. Only Windows is supported right now, if it works for other OSs it's purely coincidental (same goes for Replit).
 
 ### Speed
 * 100 channels/roles created/deleted in ~20 seconds!
