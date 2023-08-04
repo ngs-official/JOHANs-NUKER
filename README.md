@@ -47,4 +47,5 @@ Do note that these times can vary on many factors.
 1. Make sure all the files are in one folder and that no other files are in it.
 2. Check to see if all the file names are what they originally were.
 3. See if the 'config.txt' file is properly set-up: your bot's token, then your user ID, and then your preferred prefix each in their own line without anything else in that exact order.
-4. You can DM me on Discord at 'J0HAN#4273' for any help! Don't feel shy.
+4. Confirm that you have 'pip' installed, it should be automatically downloaded when you install Python.
+5. You can DM me on Discord at 'J0HAN#4273' for any help! Don't feel shy.
